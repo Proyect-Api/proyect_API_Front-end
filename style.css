@@ -1,15 +1,46 @@
 .theme-dark{
     background-color: black;
     color:white;
+    .modal-title{
+        color:black;
+
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgb(136, 133, 145);
+        height:70px;
+    }
 }
 .theme-light{
     background-color: white;
     color: black;
 }
+
 nav{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: burlywood;
+    background-color: #accee0;
     height:70px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 12px;
+}
+.main{
+    display: flex;
+    padding: 24px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    background-color:#E3DAC9;
+    gap: 24px;
+
+}
+.card{
+    width: 300px !important;
+    gap: 24px;
 }
