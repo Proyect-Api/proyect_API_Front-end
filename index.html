@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> <!--Usamos los scripts y estilos de bosstrap-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--Agregamos sweet alert-->
     <script src="App.js"defer></script>
+
     <title>Notas</title>
 </head>
 <!--Cambio de tema-->
@@ -40,7 +41,16 @@
     </div>
     <div class="card">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo enim sapiente atque veniam expedita ex at non. Voluptatem eaque suscipit quos ratione, velit dolores, magnam sequi dignissimos quaerat quia aspernatur.</p>
-      <!--Implementamos sweet alerts-->
+      <!--Botoncito para los detalles-->
+        <div class="btn-details">
+          <button id="dropdown" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <!--Agregar favicon-->...
+          </button>
+          <ul class="dropdown-menu">
+            <li><a onclick="Details()" class="dropdown-item" href="#">Editar</a></li>
+            <li><a onclick="Delete()" class="dropdown-item" href="#">Borrar</a></li>
+          </ul>
+        </div>
     </div>
    </main>
     
@@ -68,15 +78,9 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Guardar</button> <!--Agregar el guardar a este boton-->
+        <button type="button" onclick="guardar()" class="btn btn-primary">Guardar</button> <!--Agregar el guardar-->
       </div>
     </div>
   </div>
 </div>
-Swal.fire({
-  position: "top-end",
-  icon: "success",
-  title: "Your work has been saved",
-  showConfirmButton: false,
-  timer: 1500
-});
+
