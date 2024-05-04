@@ -1,18 +1,6 @@
   //Conección para la API 
  
-// fetch("http://localhost:5126/api/proyect_API")
-//     .then(response => response.json())
-//     .then(data => {
-//         const main = document.querySelector('.main'); // Seleccionar el contenedor de las cartas
-//         data.forEach(element => {
-//             const card = document.createElement("div"); // Crear un nuevo div para la carta
-//             card.classList.add("card"); // Agregar clase "card" al div
-            
-//             const notas = document.createElement("p");
-//             notas.textContent = element.notas;
-//             card.appendChild(notas);
-//        
- fetch("http://localhost:5126/api/proyect_API")
+fetch("http://localhost:5126/api/proyect_API")
     .then(response => response.json())
     .then(data => {
         const main = document.querySelector('.main'); // Seleccionar el contenedor de las cartas
@@ -23,48 +11,29 @@
             const notas = document.createElement("p");
             notas.textContent = element.notas;
             card.appendChild(notas);
-            
-            // Crear el botón de detalles y su menú desplegable
-            const btnDetails = document.createElement("div");
-            btnDetails.classList.add("btn-details");
-            const dropdownToggle = document.createElement("button");
-            dropdownToggle.classList.add("btn", "btn-secondary", "btn-sm", "dropdown-toggle");
-            dropdownToggle.type = "button";
-            dropdownToggle.setAttribute("data-bs-toggle", "dropdown");
-            // Agregar aquí el icono o favicon que desees
-            btnDetails.appendChild(dropdownToggle); // Agregar el botón al div de detalles
-            const dropdownMenu = document.createElement("ul");
-            dropdownMenu.classList.add("dropdown-menu");
-            const editarItem = document.createElement("li");
-            const editarLink = document.createElement("a");
-            editarLink.classList.add("dropdown-item");
-            editarLink.href = "#";
-            editarLink.textContent = "Editar";
-            editarLink.onclick = function() {
-                // Función para editar (puedes definirla)
-                editar(element.id); // Suponiendo que tienes un ID en cada elemento
-            };
-            editarItem.appendChild(editarLink);
-            dropdownMenu.appendChild(editarItem);
-            const borrarItem = document.createElement("li");
-            const borrarLink = document.createElement("a");
-            borrarLink.classList.add("dropdown-item");
-            borrarLink.href = "#";
-            borrarLink.textContent = "Borrar";
-            borrarLink.onclick = function() {
-                // Función para borrar (puedes definirla)
-                borrar(element.id); // Suponiendo que tienes un ID en cada elemento
-            };
-            borrarItem.appendChild(borrarLink);
-            dropdownMenu.appendChild(borrarItem);
-            btnDetails.appendChild(dropdownMenu); // Agregar el menú desplegable al div de detalles
-            
-            card.appendChild(btnDetails); // Agregar el div de detalles a la carta
-            
             main.appendChild(card); // Agregar la carta al contenedor principal
-        });
-    });
+            //Agregamos el boton de crear para le crud
+            let btondetalles = document.createElement("button"); //Agrgamos el boton editar que me sacara un modal, aún no se
+            btondetalles.setAttribute("type", "button");//Agregamos el tipo boton
+            btondetalles.classList.add("btn","btn-success","btn-sm","btn-detalles");
+            btondetalles.setAttribute("data-bs-toggle","modal");//Agregamos el boton modal? /////
+            btondetalles.setAttribute("data-bs-target", "#detalles-nota"); // Este es el id de mi boton detalles-nota
+            btondetalles.innerText = "Detalles" // le agregamos el nombre detalles a mi bton
+            card.appendChild(btondetalles);
 
+            btondetalles.addEventListener("click",()=>{ //Agregamos la funcion al boton detalles - Aún no se si añadire sweet-alerts
+                const modal_body = document.getElementById("modal-body");
+                modal_body.innerHTML =`<h5>Nombre:${element.nombre}</h5>
+                <p>Nota: ${element.notas}</p>
+                <h6>Fecha de la nota:${element.enviado}</h6>
+                <h6>ID :${element.id}`;
+            })
+            
+            //  btondetalles.setAttribute("data-toggle", "modal");
+            //  btondetalles.setAttribute("data-target", "#exampleModal");
+            //  btondetalles.textContent = "Detalles";
+            //  card.appendChild(btondetalles);
+            
 
             ///////////Esta información me servira para los detalles de la carta////////
 
@@ -85,12 +54,9 @@
             // const enviado = document.createElement("p");
             // enviado.textContent = "Enviado: " + element.enviado;
             // card.appendChild(enviado);
-        //});
-    //});
-    //////////Agregamos el crud //////////////////
-    function Create(){
-
-    }
+            
+        });
+    });
 
     function guardar(){
         Swal.fire({

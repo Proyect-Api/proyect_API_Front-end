@@ -38,12 +38,9 @@
    <main class="main" id="maincards">
     <div class="card">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo enim sapiente atque veniam expedita ex at non. Voluptatem eaque suscipit quos ratione, velit dolores, magnam sequi dignissimos quaerat quia aspernatur.</p>
-    </div>
-    <div class="card">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo enim sapiente atque veniam expedita ex at non. Voluptatem eaque suscipit quos ratione, velit dolores, magnam sequi dignissimos quaerat quia aspernatur.</p>
       <!--Botoncito para los detalles-->
         <div class="btn-details">
-          <button id="dropdown" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          <button id="dropdown" class="btn btn-secondary btn-sm menuDespegable" type="button" data-bs-toggle="dropdown">
             <!--Agregar favicon-->...
           </button>
           <ul class="dropdown-menu">
@@ -56,7 +53,7 @@
     
   </body>
   </html>
-  <!-- Modal -->
+  <!-- Modal para crear nota-->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -83,4 +80,22 @@
     </div>
   </div>
 </div>
+<!--Modal para boton detalles-->
+<div class="modal fade" id="detalles-nota" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Detalles nota:</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> <!--Necesito el data-bs-modal-->
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal para el boton de editar-->
+
 

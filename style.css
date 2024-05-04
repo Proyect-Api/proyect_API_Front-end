@@ -3,7 +3,6 @@
     color:white;
     .modal-title{
         color:black;
-
     }
     nav{
         display: flex;
@@ -12,12 +11,15 @@
         background-color: rgb(136, 133, 145);
         height:70px;
     }
+    .card{
+        background-color: black;
+        color: white;
+    }
 }
 .theme-light{
     background-color: white;
     color: black;
 }
-
 nav{
     display: flex;
     align-items: center;
@@ -25,6 +27,7 @@ nav{
     background-color: #accee0;
     height:70px;
 }
+
 .row{
     display: flex;
     align-items: center;
@@ -43,4 +46,12 @@ nav{
 .card{
     width: 300px !important;
     gap: 24px;
+}
+.btn-detalles{
+    display: flex;
+    width: 70px;
+}
+.modal-title{
+    display: flex;
+    justify-content: center;
 }
