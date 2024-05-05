@@ -15,8 +15,19 @@
         background-color: black;
         color: white;
     }
+    .modalDetails{
+        background-color: rgb(12, 9, 9);
+        color: white !important;
+    }
+    .modaltitle{
+        color: white;
+    }
 }
 .theme-light{
+    background-color: white;
+    color: black;
+}
+.modalDetails{
     background-color: white;
     color: black;
 }
@@ -51,7 +62,15 @@ nav{
     display: flex;
     width: 70px;
 }
+.btn-editar{
+    display: flex;
+    width: 70px;
+}
 .modal-title{
     display: flex;
     justify-content: center;
+}
+.btn-eliminar{
+    display: flex;
+    width: 70px;
 }

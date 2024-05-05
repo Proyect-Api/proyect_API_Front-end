@@ -58,19 +58,28 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="h1modal">Nueva nota</h1>
+        <h1 class="modal-title fs-5" id="h1modal">Nueva nota:</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="row">
+         <div class="col md-6">
+            <div class="mt-2 form-floating">
+              <input type="date" class="form-control fw-bold" id="fecha" placeholder="." onkeydown="event.key==='Enter' && document.querySelector('#submit').click();">
+              <label for="floatingInput" class="fw-bold">Fecha de nota</label>
+            </div>
+         </div>
           <div class="col md-6">
-            <input type="date" class="form-control" placeholder="">
-          </div>
-          <div class="col md-6">
-            <input type="text" class="form-control" placeholder="Titulo de la nota">
+            <div class="mt-2 form-floating">
+              <input type="text" class="form-control fw-bold" id="tituoNota" placeholder="." onkeydown="event.key==='Enter' && document.querySelector('#submit').click();">
+              <label for="floatingInput" class="fw-bold">Titulo de la nota:</label>
+            </div>
           </div>
           <div class="col-md-12">
-            <textarea class="form-control" rows="3" placeholder="Escribe tu nota"></textarea>
+            <div class="mt-2 form-floating">
+              <textarea type="date" class="form-control fw-bold" id="nota" placeholder="." onkeydown="event.key==='Enter' && document.querySelector('#submit').click();"></textarea>
+              <label for="floatingInput" class="fw-bold">Nota:</label>
+            </div>
           </div>
         </div>
       </div>
@@ -83,12 +92,12 @@
 <!--Modal para boton detalles-->
 <div class="modal fade" id="detalles-nota" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modalDetails">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Detalles nota:</h1>
+        <h1 class="modaltitle fs-5" id="exampleModalLabel">Detalles nota:</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" id="modal-body">
+      <div class="modaldetails" id="modal-body">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> <!--Necesito el data-bs-modal-->
@@ -96,6 +105,7 @@
     </div>
   </div>
 </div>
-<!--Modal para el boton de editar-->
+
+
 
 
