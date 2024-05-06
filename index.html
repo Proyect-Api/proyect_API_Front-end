@@ -23,8 +23,7 @@
         </div>
       </div>
       <div class="create">
-          <button class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal" >Nueva nota</button>
-          <button class="btn btn-danger">Basurero </button>
+          <button id="btncrear" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal" >Nueva nota</button>
       </div> 
       <div class="col-md-1"><!--Cambio de tema-->
         <select class="form-select" name="cambiotema" id="cambiotema" onchange="cambiarTema()">
@@ -36,21 +35,8 @@
     </nav>  
     <!--Cartas notas-->
    <main class="main" id="maincards">
-    <div class="card">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo enim sapiente atque veniam expedita ex at non. Voluptatem eaque suscipit quos ratione, velit dolores, magnam sequi dignissimos quaerat quia aspernatur.</p>
-      <!--Botoncito para los detalles-->
-        <div class="btn-details">
-          <button id="dropdown" class="btn btn-secondary btn-sm menuDespegable" type="button" data-bs-toggle="dropdown">
-            <!--Agregar favicon-->...
-          </button>
-          <ul class="dropdown-menu">
-            <li><a onclick="Details()" class="dropdown-item" href="#">Editar</a></li>
-            <li><a onclick="Delete()" class="dropdown-item" href="#">Borrar</a></li>
-          </ul>
-        </div>
-    </div>
+   
    </main>
-    
   </body>
   </html>
   <!-- Modal para crear nota-->
@@ -62,30 +48,31 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="row">
-         <div class="col md-6">
-            <div class="mt-2 form-floating">
-              <input type="date" class="form-control fw-bold" id="fecha" placeholder="." onkeydown="event.key==='Enter' && document.querySelector('#submit').click();">
-              <label for="floatingInput" class="fw-bold">Fecha de nota</label>
+        <form> <!--Este formulario es para la nueva nota-->
+          <div class="row">
+            <div class="col md-6">
+               <div class="mt-2 form-floating">
+                 <input type="text" class="form-control fw-bold" id="nombre" placeholder="." onkeydown="event.key==='Enter' && document.querySelector('#submit').click();">
+                 <label for="floatingInput" class="fw-bold">Nombre</label>
+               </div>
             </div>
-         </div>
-          <div class="col md-6">
-            <div class="mt-2 form-floating">
-              <input type="text" class="form-control fw-bold" id="tituoNota" placeholder="." onkeydown="event.key==='Enter' && document.querySelector('#submit').click();">
-              <label for="floatingInput" class="fw-bold">Titulo de la nota:</label>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="mt-2 form-floating">
-              <textarea type="date" class="form-control fw-bold" id="nota" placeholder="." onkeydown="event.key==='Enter' && document.querySelector('#submit').click();"></textarea>
-              <label for="floatingInput" class="fw-bold">Nota:</label>
-            </div>
-          </div>
-        </div>
+             <div class="col md-6">
+               <div class="mt-2 form-floating">
+                 <input type="text" class="form-control fw-bold" id="titulonota" placeholder="." onkeydown="event.key==='Enter' && document.querySelector('#submit').click();">
+                 <label for="floatingInput" class="fw-bold">Titulo:</label>
+               </div>
+              </div>
+             </div>
+             <div class="">
+               <div class="mt-2 form-floating">
+                 <textarea type="date" class="form-control fw-bold" id="nota" placeholder="." onkeydown="event.key==='Enter' && document.querySelector('#submit').click();"></textarea>
+                 <label for="floatingInput" class="fw-bold">Nota:</label>
+               </div>
+               <button type="submit" onclick="guardar()" class="btn btn-success w-100 mt-3" id="submitModal">Crear nueva Nota</button>
+             </div>
+        </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" onclick="guardar()" class="btn btn-primary">Guardar</button> <!--Agregar el guardar-->
-      </div>
+      </div> 
     </div>
   </div>
 </div>
